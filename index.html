@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f5f6f8"
+    >
+
+    <title>
+        Family Chores 🏠
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="app">
+
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header class="app-header">
+
+            <div>
+
+                <h1>
+                    Family Chores 🏠
+                </h1>
+
+                <p>
+                    Keep the house running.
+                </p>
+
+            </div>
+
+
+            <button
+                id="adminButton"
+                class="admin-button"
+            >
+                👑 Admin
+            </button>
+
+        </header>
+
+
+
+        <!-- =========================
+             FAMILY STATS
+        ========================== -->
+
+        <section class="family-stats">
+
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    Completed Today
+                </span>
+
+                <strong id="completedToday">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    Awaiting Approval
+                </span>
+
+                <strong id="awaitingApproval">
+                    0
+                </strong>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    Family XP
+                </span>
+
+                <strong id="familyXP">
+                    0
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             TODAY'S CHORES
+        ========================== -->
+
+        <section class="section weekly-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Today's Chores 📅
+                    </h2>
+
+                    <p>
+                        Complete your chores and
+                        submit them for approval.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="choreList"></div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             PENALTIES
+        ========================== -->
+
+        <section class="section penalty-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        ⚠️ Penalties
+                    </h2>
+
+                    <p>
+                        Submit a penalty for admin approval.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="penalty-form">
+
+
+                <select id="penaltyMember">
+
+                    <option value="">
+                        Select sibling
+                    </option>
+
+                </select>
+
+
+
+                <select id="penaltyType">
+
+                    <option value="">
+                        Select penalty
+                    </option>
+
+                </select>
+
+
+
+                <button
+                    id="submitPenaltyButton"
+                    class="admin-button"
+                >
+                    ⚠️ Submit Penalty
+                </button>
+
+
+            </div>
+
+
+
+            <div
+                id="penaltyList"
+                class="approval-list"
+            ></div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             REWARDS
+        ========================== -->
+
+        <section class="section rewards-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        🎁 Rewards
+                    </h2>
+
+                    <p>
+                        Spend your XP on rewards.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MEMBER XP -->
+
+            <div
+                id="rewardBalances"
+                class="reward-balances"
+            ></div>
+
+
+
+            <!-- REWARD CATALOGUE -->
+
+            <div
+                id="rewardList"
+                class="reward-list"
+            ></div>
+
+
+
+            <!-- REDEMPTION HISTORY -->
+
+            <div
+                id="redemptionHistory"
+                class="redemption-history"
+            ></div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             LEADERBOARD
+        ========================== -->
+
+        <section class="section leaderboard-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Family XP 🏆
+                    </h2>
+
+                    <p>
+                        Approved chores earn XP.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="leaderboard"></div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             ADMIN PANEL
+        ========================== -->
+
+        <section
+            id="adminPanel"
+            class="admin-panel hidden"
+        >
+
+
+            <div class="admin-card">
+
+
+                <h2>
+                    👑 Admin Panel
+                </h2>
+
+
+                <p>
+                    Mum's controls.
+                </p>
+
+
+
+                <!-- APPROVALS -->
+
+                <div id="approvalSection"></div>
+
+
+
+                <!-- REDEMPTION APPROVALS -->
+
+                <div
+                    id="redemptionApprovalSection"
+                    class="admin-redemption-section"
+                ></div>
+
+
+
+                <!-- DANGER ZONE -->
+
+                <div class="danger-zone">
+
+
+                    <div class="danger-header">
+
+                        <h3>
+                            ⚠️ Danger Zone
+                        </h3>
+
+
+                        <p>
+                            Reset all chore progress and XP.
+                            This cannot be undone.
+                        </p>
+
+                    </div>
+
+
+
+                    <button
+                        id="resetStatsButton"
+                        class="reset-button"
+                    >
+                        🗑️ Reset All Stats
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
