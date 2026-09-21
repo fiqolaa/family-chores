@@ -1,0 +1,10 @@
+{
+  "name": "Family Chores",
+  "short_name": "Family Chores",
+  "description": "Family chore, Solat, XP and rewards tracker",
+  "start_url": "/family-chores/",
+  "scope": "/family-chores/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
